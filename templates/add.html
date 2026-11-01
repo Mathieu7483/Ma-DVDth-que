@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un DVD</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Ajouter un DVD</h2>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <form method="POST">
+            <label for="title">Titre du film :</label>
+            <input type="text" id="title" name="title" placeholder="Ex: Alien Romulus" required autofocus>
+            <button type="submit">Rechercher et Ajouter</button>
+        </form>
+        <a href="{{ url_for('index') }}" class="btn-back">Retour au catalogue</a>
+    </div>
+</body>
+</html>

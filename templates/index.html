@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma DVDthèque</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Prime DVD</h1>
+        <a href="{{ url_for('add_dvd') }}" class="btn-add">+ Ajouter un DVD</a>
+    </header>
+
+    <main class="grid-container">
+        {% for dvd in dvds %}
+        <div class="card">
+            <img src="{{ dvd.poster_url }}" alt="Affiche de {{ dvd.title }}" class="poster">
+            <div class="card-info">
+                <h3>{{ dvd.title }} <span class="year">({{ dvd.year }})</span></h3>
+                <p><strong>Réalisateur :</strong> {{ dvd.director }}</p>
+                <p><strong>Acteurs :</strong> {{ dvd.actors }}</p>
+                <p class="synopsis">{{ dvd.synopsis }}</p>
+            </div>
+        </div>
+        {% else %}
+        <p class="empty-msg">Aucun DVD dans la collection. Cliquez sur le bouton ci-dessus pour en ajouter un !</p>
+        {% endfor %}
+    </main>
+</body>
+</html>
