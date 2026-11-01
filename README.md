@@ -106,7 +106,3 @@ Ma-DVDthèque/
 ## 👤 Auteur
 
 Projet personnel développé par **Mathieu** dans le cadre de son apprentissage de la programmation.
-
-```
-
----
