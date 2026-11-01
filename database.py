@@ -67,3 +67,8 @@ class Database:
                 for g in row["genres"].split(","):
                     genres_set.add(g.strip())
             return sorted(list(genres_set))
+
+    def delete_dvd(self, dvd_id: int):
+        with self.get_connection() as conn:
+            conn.execute("DELETE FROM dvds WHERE id = ?", (dvd_id,))
+            conn.commit()

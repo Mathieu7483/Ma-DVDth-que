@@ -35,5 +35,10 @@ def add_dvd():
                 error = f"Aucun film trouvé pour '{title}'."
     return render_template("add.html", error=error)
 
+@app.route("/delete/<int:dvd_id>", methods=["POST"])
+def delete_dvd(dvd_id):
+    db.delete_dvd(dvd_id)
+    return redirect(url_for("index"))
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

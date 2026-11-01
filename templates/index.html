@@ -33,17 +33,19 @@
     <main class="grid-container">
         {% for dvd in dvds %}
         <div class="card">
-            <img src="{{ dvd.poster_url }}" alt="Affiche de {{ dvd.title }}" class="poster">
-            <div class="card-info">
-                <h3>{{ dvd.title }} <span class="year">({{ dvd.year }})</span></h3>
-                {% if dvd.genres %}
-                    <p class="genres-tags"><strong>Genre :</strong> {{ dvd.genres }}</p>
-                {% endif %}
-                <p><strong>Réalisateur :</strong> {{ dvd.director }}</p>
-                <p><strong>Acteurs :</strong> {{ dvd.actors }}</p>
-                <p class="synopsis">{{ dvd.synopsis }}</p>
-            </div>
-        </div>
+    <img src="{{ dvd.poster_url }}" alt="Affiche de {{ dvd.title }}" class="poster">
+    <div class="card-info">
+        <h3>{{ dvd.title }} <span class="year">({{ dvd.year }})</span></h3>
+        {% if dvd.genres %}<p class="genres-tags"><strong>Genre :</strong> {{ dvd.genres }}</p>{% endif %}
+        <p><strong>Réalisateur :</strong> {{ dvd.director }}</p>
+        <p><strong>Acteurs :</strong> {{ dvd.actors }}</p>
+        <p class="synopsis">{{ dvd.synopsis }}</p>
+        
+        <form action="{{ url_for('delete_dvd', dvd_id=dvd.id) }}" method="POST" onsubmit="return confirm('Supprimer ce DVD ?');">
+            <button type="submit" class="btn-delete">🗑️ Supprimer</button>
+        </form>
+    </div>
+</div>
         {% else %}
         <p class="empty-msg">Aucun DVD trouvé dans la collection.</p>
         {% endfor %}

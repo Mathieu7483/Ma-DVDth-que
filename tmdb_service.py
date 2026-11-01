@@ -4,9 +4,12 @@ API_KEY = "b9e11dd2b1af80d311f2fb0f381a5ddc"
 BASE_URL = "https://api.themoviedb.org/3"
 IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500"
 
-def search_and_get_movie_details(title: str) -> dict | None:
+def search_and_get_movie_details(title: str, year: str = None) -> dict | None:
     search_url = f"{BASE_URL}/search/movie"
     params = {"api_key": API_KEY, "query": title, "language": "fr-FR"}
+    if year:
+        params["year"] = year
+        
     response = requests.get(search_url, params=params)
     if response.status_code != 200 or not response.json().get("results"):
         return None

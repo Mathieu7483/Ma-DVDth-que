@@ -1,3 +1,4 @@
+Films
 1917
 60 secondes chrono
 65 : La Terre d'avant
@@ -57,7 +58,7 @@ Eiffel
 Encanto : La Fantastique Famille Madrigal
 Entre deux rives
 Equalizer 3
-Final Fantasy
+Final Fantasy VII: Advent Children
 Firefight
 First Man : Le Premier Homme sur la Lune
 Forrest Gump
@@ -120,9 +121,9 @@ Lord of War
 Maléfique
 Maléfique : Le Pouvoir du mal
 Man on Fire
-Mary
+Mary Poppins
 Mémoires d'une geisha
-Merlin
+Merlin l'enchanteur
 Mulan
 Next
 Novembre
