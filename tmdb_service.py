@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = "VOTRE_CLE_API_TMDB"  # À remplacer par votre clé gratuite TMDb
+API_KEY = "b9e11dd2b1af80d311f2fb0f381a5ddc" 
 BASE_URL = "https://api.themoviedb.org/3"
 IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500"
 
