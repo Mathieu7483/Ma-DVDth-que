@@ -7,8 +7,19 @@ db = Database()
 
 @app.route("/")
 def index():
-    dvds = db.get_all_dvds()
-    return render_template("index.html", dvds=dvds)
+    search = request.args.get("q", "").strip()
+    selected_genre = request.args.get("genre", "").strip()
+    
+    dvds = db.get_all_dvds(search_query=search, genre_filter=selected_genre)
+    all_genres = db.get_all_genres()
+    
+    return render_template(
+        "index.html", 
+        dvds=dvds, 
+        search=search, 
+        selected_genre=selected_genre, 
+        all_genres=all_genres
+    )
 
 @app.route("/add", methods=["GET", "POST"])
 def add_dvd():
@@ -25,5 +36,4 @@ def add_dvd():
     return render_template("add.html", error=error)
 
 if __name__ == "__main__":
-    # host='0.0.0.0' rend l'application accessible sur le réseau local
     app.run(host="0.0.0.0", port=5000, debug=True)

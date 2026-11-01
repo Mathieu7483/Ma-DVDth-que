@@ -120,3 +120,66 @@ input[type="text"] {
 .error {
     color: #ff4d4d;
 }
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex: 1;
+    max-width: 400px;
+    margin: 0 20px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #252e39;
+    background: #0f171e;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.btn-search {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.btn-reset {
+    color: #8197a4;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.btn-reset:hover {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    .search-form {
+        max-width: 100%;
+        margin: 0;
+    }
+
+
+.genre-select {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #252e39;
+    background: #0f171e;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.genres-tags {
+    color: #1a98ff !important;
+    font-size: 0.8rem !important;
+}
+}

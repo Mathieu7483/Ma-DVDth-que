@@ -9,6 +9,24 @@
 <body>
     <header>
         <h1>Prime DVD</h1>
+        
+        <form method="GET" action="/" class="search-form">
+            <input type="text" name="q" placeholder="Film, acteur, réal..." value="{{ search }}" class="search-input">
+            
+            <select name="genre" class="genre-select" onchange="this.form.submit()">
+                <option value="">Tous les genres</option>
+                {% for genre in all_genres %}
+                    <option value="{{ genre }}" {% if genre == selected_genre %}selected{% endif %}>{{ genre }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit" class="btn-search">Filtrer</button>
+            
+            {% if search or selected_genre %}
+                <a href="{{ url_for('index') }}" class="btn-reset">✖ Reset</a>
+            {% endif %}
+        </form>
+
         <a href="{{ url_for('add_dvd') }}" class="btn-add">+ Ajouter un DVD</a>
     </header>
 
@@ -18,13 +36,16 @@
             <img src="{{ dvd.poster_url }}" alt="Affiche de {{ dvd.title }}" class="poster">
             <div class="card-info">
                 <h3>{{ dvd.title }} <span class="year">({{ dvd.year }})</span></h3>
+                {% if dvd.genres %}
+                    <p class="genres-tags"><strong>Genre :</strong> {{ dvd.genres }}</p>
+                {% endif %}
                 <p><strong>Réalisateur :</strong> {{ dvd.director }}</p>
                 <p><strong>Acteurs :</strong> {{ dvd.actors }}</p>
                 <p class="synopsis">{{ dvd.synopsis }}</p>
             </div>
         </div>
         {% else %}
-        <p class="empty-msg">Aucun DVD dans la collection. Cliquez sur le bouton ci-dessus pour en ajouter un !</p>
+        <p class="empty-msg">Aucun DVD trouvé dans la collection.</p>
         {% endfor %}
     </main>
 </body>
