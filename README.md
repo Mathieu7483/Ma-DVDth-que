@@ -1,11 +1,6 @@
 <p align="center">
 <img src="https://raw.githubusercontent.com/Mathieu7483/Ma-DVDth-que/main/Ma%20dvdth%C3%A8que.jpg" width="800px" alt="Ma DVDthèque Banner">
 </p>
-<p align="center">
-<img src="https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-<img src="https://img.shields.io/badge/Flask-2.0+-green?style=for-the-badge&logo=flask&logoColor=white" alt="Flask">
-<img src="https://img.shields.io/badge/SQLite-3-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
-</p>
 
 # 🎬 Ma DVDthèque
 
